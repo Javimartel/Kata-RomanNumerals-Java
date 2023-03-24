@@ -14,4 +14,9 @@ class RomanNumeralsTest {
     void number_two_should_return_II() {
         assertEquals(RomanNumerals.transform(2), "II");
     }
+
+    @Test
+    void number_three_should_return_III() {
+        assertEquals(RomanNumerals.transform(3), "III");
+    }
 }
