@@ -59,4 +59,9 @@ class RomanNumeralsTest {
     void number_ninety_nine_should_return_XCIX() {
         assertEquals(RomanNumerals.transform(99), "XCIX");
     }
+
+    @Test
+    void number_one_hundred_should_return_C() {
+        assertEquals(RomanNumerals.transform(100), "C");
+    }
 }
