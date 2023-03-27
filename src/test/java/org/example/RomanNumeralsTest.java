@@ -34,4 +34,9 @@ class RomanNumeralsTest {
     void number_nine_should_return_IX() {
         assertEquals(RomanNumerals.transform(9), "IX");
     }
+
+    @Test
+    void number_ten_should_return_X() {
+        assertEquals(RomanNumerals.transform(10), "X");
+    }
 }
