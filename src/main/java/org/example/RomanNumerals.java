@@ -1,8 +1,32 @@
 package org.example;
 
+import java.util.Map;
+
 public class RomanNumerals {
+    private static final Map<Integer, String> roman = Map.of(
+            1, "I",
+            4, "IV",
+            5, "V",
+            9, "IX",
+            10, "X"
+    );
+
     public static String transform(int number) {
-        String numberInRoman = number < 4 ? "I".repeat(number) : "IV";
-        return number > 4 ? "V" : numberInRoman;
+
+        var romanIterator = RomanNumerals.roman.entrySet().stream()
+                .sorted(Map.Entry.<Integer, String>comparingByKey()
+                        .reversed()).iterator();
+
+        String numberTransformed = "";
+
+        while (romanIterator.hasNext()) {
+            var romanData = romanIterator.next();
+            while (number >= romanData.getKey()) {
+                numberTransformed += romanData.getValue();
+                number -= romanData.getKey();
+            }
+        }
+
+        return numberTransformed;
     }
 }
