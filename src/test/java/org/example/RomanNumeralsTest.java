@@ -41,7 +41,7 @@ class RomanNumeralsTest {
     }
 
     @Test
-    void number_forty_nine_should_return_IL() {
+    void number_forty_nine_should_return_XLIX() {
         assertEquals(RomanNumerals.transform(49), "XLIX");
     }
 
@@ -73,5 +73,10 @@ class RomanNumeralsTest {
     @Test
     void number_five_hundred_should_return_D() {
         assertEquals(RomanNumerals.transform(500), "D");
+    }
+
+    @Test
+    void number_nine_hundred_should_return_CM() {
+        assertEquals(RomanNumerals.transform(900), "CM");
     }
 }
