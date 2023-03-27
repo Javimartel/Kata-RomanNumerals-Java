@@ -20,20 +20,22 @@ public class RomanNumerals {
 
     public static String transform(int number) {
 
-        var romanIterator = RomanNumerals.roman.entrySet().stream()
+        var romanList = RomanNumerals.roman.entrySet().stream()
                 .sorted(Map.Entry.<Integer, String>comparingByKey()
-                        .reversed()).iterator();
+                        .reversed()).toList();
 
-        String numberTransformed = "";
+        StringBuilder numberTransformed = new StringBuilder();
+        int index = 0;
 
-        while (romanIterator.hasNext()) {
-            var romanData = romanIterator.next();
-            while (number >= romanData.getKey()) {
-                numberTransformed += romanData.getValue();
+        while (number > 0) {
+            var romanData = romanList.get(index);
+            index += number < romanData.getKey() ? 1 : 0;
+            if (number >= romanData.getKey()) {
+                numberTransformed.append(romanData.getValue());
                 number -= romanData.getKey();
             }
         }
 
-        return numberTransformed;
+        return numberTransformed.toString();
     }
 }
