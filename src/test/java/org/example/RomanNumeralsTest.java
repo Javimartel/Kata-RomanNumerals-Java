@@ -84,4 +84,9 @@ class RomanNumeralsTest {
     void number_one_thousand_should_return_M() {
         assertEquals(RomanNumerals.transform(1000), "M");
     }
+
+    @Test
+    void number_three_thousand_should_return_exception() {
+        assertThrows(RomanNumberMaximumException.class, () -> RomanNumerals.transform(3000));
+    }
 }
