@@ -9,7 +9,8 @@ public class RomanNumerals {
             5, "V",
             9, "IX",
             10, "X",
-            49, "IL"
+            49, "IL",
+            50, "L"
     );
 
     public static String transform(int number) {
