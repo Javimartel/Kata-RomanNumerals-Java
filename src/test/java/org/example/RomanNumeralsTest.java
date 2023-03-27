@@ -41,12 +41,12 @@ class RomanNumeralsTest {
     }
 
     @Test
-    void number_fortynine_should_return_ID() {
+    void number_fortynine_should_return_IL() {
         assertEquals(RomanNumerals.transform(49), "IL");
     }
 
     @Test
-    void number_fifty_should_return_ID() {
+    void number_fifty_should_return_L() {
         assertEquals(RomanNumerals.transform(50), "L");
     }
 }
